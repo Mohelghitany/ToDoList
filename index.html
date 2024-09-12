@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <main id="main-content">
+        <div>
+            <div id="header">
+                <h1>ToDo List</h1>
+            </div>
+            <div id="body">
+                <ul>
+                    <li>
+                        <div class="li">
+                            <i id="done" class="fa-regular fa-circle"></i>
+                            Welcome to ToDo List
+                            <i id="delete" class="fa-solid fa-trash"></i>
+                            
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button id="add" data-bs-toggle="modal" data-bs-target="listmodal">
+                <i class="fa-solid fa-plus"></i>
+                <h4>Add New Task</h4>
+            </button>
+        </div>
+    </main>
+    <div id="notification" class="notification"></div>
+    <div class="mod">
+        <div class="modal-content" id="modal" tabindex="-1" aria-labelledby="modallabel" aria-hidden="true">
+            <div class="modal-header">
+                <h6 class="modal-title" id="ModalLabel">Add Task</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-regular fa-circle-xmark fa-2x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="task" placeholder="Enter Task">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="primary">Add</button>
+            </div>
+        </div>
+    </div>
+   
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

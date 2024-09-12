@@ -1,0 +1,362 @@
+/* Reset margin and padding for all elements, set background color */
+* {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(160, 204, 221);
+}
+
+/* Main section styling, center content vertically and horizontally */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Styling for the header (h1), centered text with background and padding */
+h1 {
+    background-color: blueviolet;
+    height: 100px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* Container for the task list body, scrollable with padding and shadows */
+#body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: scroll;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+/* Styling for small headers (h4) inside the modal, inheriting background color */
+h4 {
+    display: inline;
+    color: white;
+    background-color: inherit;
+}
+
+/* Icon styling inside the add button */
+#add i {
+    color: white;
+    background-color: inherit;
+}
+
+/* Add button position and styling */
+#add {
+    position: absolute;
+    top: 660px;
+    left: 44%;
+    background-color: blueviolet;
+    height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    z-index: 1;
+}
+
+/* Add button hover effect */
+#add:hover {
+    transform: translate(0, -5px);
+}
+
+/* Unordered list (task list) styling, center-align the list items */
+ul {
+    list-style-type: none;
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Task list item styling */
+li {
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'roboto';
+    margin-top: 30px;
+}
+
+/* Task list item container for task and icons */
+.li {
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'roboto';
+    margin-top: 30px;
+}
+
+/* Icon styling inside each task item */
+.li i {
+    background-color: inherit;
+    margin: 0px 45px 0px 45px;
+    color: rgb(144, 144, 144);
+}
+
+/* Modal styling, centered and fixed on the screen */
+#modal {
+    position: fixed;
+    top: 25%;
+    left: 33%;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+/* Modal header section styling */
+.modal-header {
+    height: 70px;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    align-items: center;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+/* Close button styling */
+.btn-close {
+    background-color: white;
+    color: red;
+    border: none;
+    width: 50px;
+}
+
+/* Close button hover effect */
+.btn-close:hover {
+    transform: translate(0, -0.5px);
+}
+
+/* Icon styling inside the close button */
+.btn-close i {
+    background-color: white;
+}
+
+/* General modal elements styling */
+.modal-dialog,
+.modal-content,
+.modal-header,
+.modal-title,
+.modal-body,
+.modal-footer {
+    background-color: white;
+}
+
+/* Task input field styling */
+#task {
+    height: 60px;
+    width: 300px;
+    border-radius: 35px;
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Primary button styling inside the modal */
+.primary {
+    background-color: blueviolet;
+    color: white;
+    font-weight: bold;
+    border: none;
+    height: 50px;
+    width: 200px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Primary button hover effect */
+.primary:hover {
+    transform: translate(0, -5px);
+}
+
+/* Modal content container styling */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal title styling */
+.modal-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Modal hidden by default */
+.mod {
+    display: none;
+}
+
+/* Transition effect for adding/removing list items */
+li,
+.li {
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    opacity: 1;
+    transform: rotateY(0);
+    transform-style: preserve-3d;
+}
+
+/* Transition class for adding a task */
+.add-item-transition {
+    opacity: 0;
+    transform: rotateY(90deg);
+}
+
+/* Transition class for removing a task */
+.remove-item-transition {
+    opacity: 0;
+    transform: rotateY(-90deg);
+    padding: 0;
+}
+
+/* Notification box styling */
+.notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #444;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+/* Show notification class */
+.notification.show {
+    display: block;
+}
+
+/* Success notification styling */
+.notification.success {
+    background-color: #4CAF50;
+}
+
+/* Error notification styling */
+.notification.error {
+    background-color: #f44336;
+}
+
+/* Responsive styling for screen widths less than 768px */
+@media screen and (max-width: 768px) {
+
+    h1,
+    #body,
+    #modal {
+        width: 90%;
+        height: 90%;
+    }
+
+    #add {
+        top: 85%;
+        left: 35%;
+        width: 180px;
+    }
+
+    ul {
+        margin: 20px;
+        padding: 5px;
+    }
+
+    li,
+    .li {
+        margin-top: 20px;
+    }
+
+    #task {
+        width: 250px;
+        height: 50px;
+    }
+}
+
+/* Further responsive styling for screen widths less than 480px */
+@media screen and (max-width: 480px) {
+    #header {
+        width: 300px;
+    }
+
+    h1,
+    #body {
+        width: 95%;
+        height: auto;
+    }
+
+    #modal {
+        width: 300px;
+        height: 300px;
+    }
+
+    #add {
+        top: 90%;
+        left: 25%;
+        width: 150px;
+        height: 40px;
+    }
+
+    ul {
+        margin: 15px;
+        padding: 5px;
+    }
+
+    li,
+    .li {
+        margin-top: 15px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .li i {
+        margin: 10px 0;
+    }
+
+    #task {
+        width: 200px;
+        height: 45px;
+    }
+
+    .primary {
+        width: 150px;
+        height: 40px;
+    }
+
+    .modal-header {
+        width: 90%;
+        margin-left: 5%;
+    }
+}
